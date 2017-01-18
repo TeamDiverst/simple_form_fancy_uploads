@@ -6,7 +6,7 @@ module SimpleFormFancyUploads
       url = preview_url(merged_input_options)
 
       out = ''
-      out << template.image_tag(url) if url
+      out << template.image_tag(url, class: "field__input-image-preview") if url
       out << @builder.input("#{attribute_name}_cache", as: 'hidden')
       (out << super).html_safe
     end

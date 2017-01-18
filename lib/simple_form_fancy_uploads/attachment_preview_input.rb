@@ -3,7 +3,8 @@ module SimpleFormFancyUploads
     def input(wrapper_options=nil)
       out = ''
       if object.send("#{attribute_name}?")
-        out << template.link_to(object.send(attribute_name).original_filename, object.send(attribute_name).expiring_url)
+        out << template.link_to(object.send(attribute_name).original_filename,
+          object.send(attribute_name).expiring_url, class: "field__input-attachment-preview")
       end
       (out << super).html_safe
     end
